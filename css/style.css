@@ -507,6 +507,153 @@ button { font-family: inherit; cursor: pointer; border: none; background: none; 
 .to-top.is-visible { opacity: 1; visibility: visible; transform: translateY(0); }
 .to-top:hover { background: var(--clr-dark); }
 
+/* ===== Consult Page ===== */
+.consult-hero {
+  padding: 180px 0 70px;
+  background: var(--clr-dark);
+  text-align: center;
+}
+.consult-hero .section-eyebrow,
+.consult-hero .section-title { color: #fff; }
+.consult-hero .section-desc { color: rgba(255,255,255,.65); margin-top: 16px; }
+
+.consult-section { padding: 70px 0 130px; background: var(--clr-bg); }
+.consult-wrap { max-width: 860px; margin: 0 auto; }
+
+.tabs {
+  display: inline-flex;
+  gap: 4px;
+  background: var(--clr-cream);
+  padding: 6px;
+  border-radius: 40px;
+  margin: -46px auto 40px;
+  position: relative;
+  z-index: 2;
+}
+.consult-wrap .tabs { display: flex; justify-content: center; width: fit-content; }
+.tab-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--clr-text-muted);
+  transition: all .25s ease;
+}
+.tab-btn.is-active {
+  background: #fff;
+  color: var(--clr-dark);
+  box-shadow: 0 6px 18px rgba(79,56,38,.12);
+}
+.tab-panel { display: none; }
+.tab-panel.is-active { display: block; }
+
+.form-card {
+  background: #fff;
+  border: 1px solid var(--clr-line);
+  border-radius: 14px;
+  padding: 44px;
+  box-shadow: 0 20px 50px rgba(79,56,38,.06);
+}
+.info-banner {
+  background: var(--clr-cream);
+  border-left: 3px solid var(--clr-brown);
+  border-radius: 6px;
+  padding: 18px 22px;
+  font-size: 14px;
+  color: var(--clr-brown-dark);
+  line-height: 1.7;
+  margin-bottom: 36px;
+}
+.info-banner strong { color: var(--clr-dark); }
+
+.field-group { margin-bottom: 24px; }
+.field-group > span.field-label {
+  display: block;
+  margin-bottom: 9px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--clr-dark);
+}
+.field-label .required { color: #c0392b; margin-left: 2px; }
+.field-note { margin-top: 8px; font-size: 12.5px; color: var(--clr-text-muted); }
+
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.field-group input[type="text"],
+.field-group input[type="tel"],
+.field-group input[type="number"],
+.field-group input[type="date"],
+.field-group select,
+.field-group textarea {
+  width: 100%;
+  padding: 13px 16px;
+  border: 1px solid var(--clr-line);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: inherit;
+  color: var(--clr-dark);
+  background: #faf9f7;
+  transition: border-color .25s ease;
+}
+.field-group input:focus,
+.field-group select:focus,
+.field-group textarea:focus {
+  outline: none;
+  border-color: var(--clr-brown);
+}
+.field-group textarea { resize: vertical; }
+
+.address-row { display: flex; gap: 10px; margin-bottom: 12px; }
+.address-row input { flex: 1; }
+.btn-address {
+  flex-shrink: 0;
+  padding: 0 22px;
+  border-radius: 8px;
+  background: var(--clr-dark);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+.btn-address:hover { background: var(--clr-brown-dark); }
+.address-detail { margin-top: 12px; }
+
+.chip-group { display: flex; flex-wrap: wrap; gap: 10px; }
+.chip {
+  padding: 10px 20px;
+  border: 1px solid var(--clr-line);
+  border-radius: 30px;
+  font-size: 13.5px;
+  color: var(--clr-text-muted);
+  background: #fff;
+  transition: all .2s ease;
+}
+.chip:hover { border-color: var(--clr-brown); color: var(--clr-brown-dark); }
+.chip.is-active {
+  background: var(--clr-brown-dark);
+  border-color: var(--clr-brown-dark);
+  color: #fff;
+}
+
+.agree-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin: 28px 0;
+  font-size: 13px;
+  color: var(--clr-text-muted);
+}
+.agree-row input { margin-top: 3px; accent-color: var(--clr-brown-dark); }
+.agree-row a { color: var(--clr-brown-dark); text-decoration: underline; }
+
+@media (max-width: 768px) {
+  .consult-hero { padding: 150px 0 60px; }
+  .form-card { padding: 26px; }
+  .field-row { grid-template-columns: 1fr; }
+  .address-row { flex-direction: column; }
+  .btn-address { width: 100%; padding: 13px; }
+}
+
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
   .about__inner, .contact__inner { grid-template-columns: 1fr; }
