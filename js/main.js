@@ -1,25 +1,29 @@
 document.addEventListener('DOMContentLoaded', () => {
   /* Header scroll state */
   const header = document.getElementById('header');
-  const toggleHeader = () => {
-    header.classList.toggle('is-scrolled', window.scrollY > 40);
-  };
-  toggleHeader();
-  window.addEventListener('scroll', toggleHeader);
+  if (header) {
+    const toggleHeader = () => {
+      header.classList.toggle('is-scrolled', window.scrollY > 40);
+    };
+    toggleHeader();
+    window.addEventListener('scroll', toggleHeader);
+  }
 
   /* Mobile nav toggle */
   const hamburger = document.getElementById('hamburger');
   const nav = document.getElementById('nav');
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('is-active');
-    nav.classList.toggle('is-open');
-  });
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('is-active');
-      nav.classList.remove('is-open');
+  if (hamburger && nav) {
+    hamburger.addEventListener('click', () => {
+      hamburger.classList.toggle('is-active');
+      nav.classList.toggle('is-open');
     });
-  });
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-active');
+        nav.classList.remove('is-open');
+      });
+    });
+  }
 
   /* Scroll reveal */
   const revealEls = document.querySelectorAll('[data-reveal]');
@@ -84,24 +88,28 @@ document.addEventListener('DOMContentLoaded', () => {
   /* Contact form (client-side only) */
   const form = document.getElementById('contactForm');
   const formMsg = document.getElementById('formMsg');
-  form.addEventListener('submit', (e) => {
-    e.preventDefault();
-    const name = form.name.value.trim();
-    const phone = form.phone.value.trim();
-    if (!name || !phone) {
-      formMsg.textContent = '이름과 연락처를 입력해 주세요.';
-      return;
-    }
-    formMsg.textContent = `${name}님, 상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.`;
-    form.reset();
-  });
+  if (form && formMsg) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = form.name.value.trim();
+      const phone = form.phone.value.trim();
+      if (!name || !phone) {
+        formMsg.textContent = '이름과 연락처를 입력해 주세요.';
+        return;
+      }
+      formMsg.textContent = `${name}님, 상담 신청이 접수되었습니다. 빠르게 연락드리겠습니다.`;
+      form.reset();
+    });
+  }
 
   /* Back to top */
   const toTop = document.getElementById('toTop');
-  window.addEventListener('scroll', () => {
-    toTop.classList.toggle('is-visible', window.scrollY > 600);
-  });
-  toTop.addEventListener('click', () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  });
+  if (toTop) {
+    window.addEventListener('scroll', () => {
+      toTop.classList.toggle('is-visible', window.scrollY > 600);
+    });
+    toTop.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 });
