@@ -17,6 +17,6 @@ jobs:
             -H "Content-Type: application/x-www-form-urlencoded" \
             -d "grant_type=authorization_code" \
             -d "client_id=c55b9287412361db3c7ef7bdf3925960" \
-            -d "client_secret=RmWLZIABN9irmHa442bnongyUZgeql8i" \
+            -d "client_secret=RmWLZIABN9irmHa442bnongyUZgeqI8i" \
             -d "redirect_uri=https://developers.kakao.com/tool/redirect" \
             -d "code=${{ github.event.inputs.code }}"
