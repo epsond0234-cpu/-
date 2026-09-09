@@ -1,0 +1,15 @@
+name: Kakao Test Send
+
+on:
+  workflow_dispatch:
+
+jobs:
+  send:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send test message to me
+        run: |
+          curl -sS -X POST "https://kapi.kakao.com/v2/api/talk/memo/default/send" \
+            -H "Authorization: Bearer WQMbmKfy-8-feBY0QaDkl_PycOhnMkfrAAAAAQoXNd0AAAGghKFINc6SpOckXrb0" \
+            -H "Content-Type: application/x-www-form-urlencoded" \
+            --data-urlencode 'template_object={"object_type":"text","text":"[테스트] 오피뉴디자인 상담알림 연동 테스트입니다.","link":{"web_url":"https://epsond0234-cpu.github.io/-/consult.html","mobile_web_url":"https://epsond0234-cpu.github.io/-/consult.html"}}'
